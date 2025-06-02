@@ -92,16 +92,27 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-// Connect to database before handling requests
-app.use(async (req, res, next) => {
+// This middleware ensures database is connected before handling any request
+const dbMiddleware = async (req, res, next) => {
   try {
     await connectToDatabase();
     next();
   } catch (error) {
     console.error('Database connection error:', error);
-    res.status(500).json({ message: 'Database connection failed' });
+    return res.status(500).json({ message: 'Database connection failed', error: error.message });
   }
-});
+};
 
-// Export the Express API for Vercel
+// Apply database middleware to all routes
+app.use(dbMiddleware);
+
+// The serverless function handler for Vercel
+const handler = async (req, res) => {
+  // Return the Express app directly
+  return app(req, res);
+};
+
+// Export the handler for Vercel AND the app for local development
 module.exports = app;
+// Also export handler specifically for Vercel
+module.exports.handler = handler;
