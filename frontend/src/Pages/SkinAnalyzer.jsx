@@ -1,4 +1,5 @@
 import axios from 'axios';
+import API_URL from '../config/api.js';
 import { useState } from 'react';
 import imageNotFound from '../Components/Assets/ImageNotFound.png';
 import './Styles/SkinAnalyzer.css';
@@ -87,7 +88,7 @@ const SkinAnalyzer = () => {
 
     try {
       // Directly use the backend URL instead of relying on the proxy
-      const response = await axios.post('http://localhost:5000/api/skin-analyzer/analyze', formData, {
+      const response = await axios.post(`${API_URL}/api/skin-analyzer/analyze`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

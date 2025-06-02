@@ -1,4 +1,5 @@
 import axios from "axios";
+import API_URL from "../../config/api.js";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../Context/AuthContext.js";
@@ -66,7 +67,7 @@ const LoginForm = ({ toggleForm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const res = await axios.post(`${API_URL}/api/auth/login`, formData);
 
       login(res.data.token); // Uses the context login
       alert("Login successful!");
@@ -119,7 +120,7 @@ const RegisterForm = ({ toggleForm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const res = await axios.post(`${API_URL}/api/auth/register`, formData);
       console.log("Registered:", res.data);
       toggleForm();
     } catch (err) {

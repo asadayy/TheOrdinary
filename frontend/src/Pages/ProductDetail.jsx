@@ -1,4 +1,5 @@
 import axios from "axios"; // Import axios
+import API_URL from "../config/api.js";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
@@ -52,7 +53,7 @@ const ProductDetail = () => {
     
     try {
       setReviewsLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/ratings/reviews/${productId}`);
+      const response = await axios.get(`${API_URL}/api/ratings/reviews/${productId}`);
       setReviews(response.data.data);
     } catch (err) {
       console.error('Error fetching reviews:', err);
@@ -66,7 +67,7 @@ const ProductDetail = () => {
     // Refresh product data to get updated ratings
     if (product && product._id) {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/products/${product._id}`);
+        const { data } = await axios.get(`${API_URL}/api/products/${product._id}`);
         setProduct(data);
         // Also refresh reviews
         fetchProductReviews(product._id);
@@ -88,7 +89,7 @@ const ProductDetail = () => {
             
             if (productId) {
                 // If we have an ID, fetch the product directly
-                const response = await axios.get(`http://localhost:5000/api/products/${productId}`);
+                const response = await axios.get(`${API_URL}/api/products/${productId}`);
                 setProduct(response.data);
                 return;
             }

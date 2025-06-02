@@ -1,4 +1,5 @@
 import axios from "axios";
+import API_URL from "../config/api.js";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "swiper/css";
@@ -100,9 +101,9 @@ const Home = () => {
     try {
       // Fetch one product from each category with proper URL encoding
       const [skincareRes, hairBodyRes, setsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/products?category=Skincare&limit=1'),
-        axios.get('http://localhost:5000/api/products?category=' + encodeURIComponent('Hair & Body') + '&limit=1'),
-        axios.get('http://localhost:5000/api/products?category=' + encodeURIComponent('Sets & Collections') + '&limit=1')
+        axios.get(`${API_URL}/api/products?category=Skincare&limit=1`),
+        axios.get(`${API_URL}/api/products?category=${encodeURIComponent('Hair & Body')}&limit=1`),
+        axios.get(`${API_URL}/api/products?category=${encodeURIComponent('Sets & Collections')}&limit=1`)
       ]);
 
       // Log the responses for debugging

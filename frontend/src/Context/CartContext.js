@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
+import API_URL from "../config/api.js";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = API_URL;
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
