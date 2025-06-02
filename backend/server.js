@@ -27,7 +27,11 @@ const PORT = process.env.PORT || 5000;
 // Allow React devserver (http://localhost:3000) to send cookies
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://the-ordinary-hqjz.vercel.app", process.env.FRONTEND_URL || "*"],
+    origin: [
+      "http://localhost:3000",
+      "https://the-ordinary-hqjz.vercel.app", // Frontend Vercel URL
+      process.env.FRONTEND_URL || "*"
+    ],
     credentials: true,
   })
 );

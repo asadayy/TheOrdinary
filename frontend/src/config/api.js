@@ -1,13 +1,8 @@
 // API Configuration
 
-// For development (use this when testing locally)
-// const API_URL = 'http://localhost:5000';
-
-// For production with backend on localhost (development only - not recommended for real users)
-// IMPORTANT: This won't work for most users since localhost refers to their own computer!
-const API_URL = 'http://localhost:5000';
-
-// For production with deployed backend (use this once backend is deployed)
-// const API_URL = 'https://your-actual-backend-url.vercel.app';
+// Use environment detection to switch between local and production URLs
+const API_URL = process.env.NODE_ENV === 'production'
+  ? 'https://the-ordinary-ifxd.vercel.app' // Deployed backend URL
+  : 'http://localhost:5000'; // Local development
 
 export default API_URL;
