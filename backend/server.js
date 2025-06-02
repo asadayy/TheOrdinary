@@ -16,23 +16,25 @@ const skinAnalyzerRoutes = require("./routes/skinAnalyzerRoutes");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const mongoose = require("mongoose");
 
-// Connect to MongoDB only once (at the module level)  
-let cachedDb = null;
+// Connect to MongoDB (for both local development and Vercel)
+let isConnected = false;
 
-async function connectToDatabase() {
-  if (cachedDb) {
-    // Use existing database connection
-    return cachedDb;
+const connectToDatabase = async () => {
+  if (isConnected) {
+    console.log('Using existing MongoDB connection');
+    return;
   }
-  
-  // Connect to database
-  const client = await mongoose.connect(process.env.MONGODB_URI, {
-    serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-  });
-  
-  cachedDb = client;
-  return client;
-}
+
+  try {
+    const db = await mongoose.connect(process.env.MONGODB_URI);
+    isConnected = true;
+    console.log('MongoDB connected ✅');
+    return db;
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1);
+  }
+};
 
 // Initialize express app
 const app = express();
@@ -79,7 +81,10 @@ app.use(errorHandler);
 // For local development only, not used in Vercel
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  // Connect to database immediately in development mode
+  connectToDatabase().then(() => {
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  });
 }
 
 // Connect to database before handling requests
