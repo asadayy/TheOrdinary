@@ -1,0 +1,575 @@
+.skin-analyzer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+
+.skin-analyzer-container h1, 
+.skin-analyzer-container h2, 
+.skin-analyzer-container h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.analyzer-description {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Upload Area Styling */
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+}
+
+.dropzone:hover {
+  border-color: #000;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+.preview-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.change-image-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #000;
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.change-image-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Button Styling */
+.analyze-button {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.analyze-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.analyze-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d32f2f;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Analysis Results Styling */
+.analysis-results {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Centered image at the top */
+.results-image-container.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.results-image {
+  width: 320px;
+  height: 100%;
+  border-radius: 5%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+}
+
+
+.new-analysis-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 200px;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.new-analysis-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Product sections */
+.product-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 3px solid #000;
+  background-color: #fff;
+  display: block;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.product-section h3 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.product-details-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.product-why-helps,
+.product-key-ingredients,
+.product-usage {
+  background: #f9f9f9;
+  padding: 1.25rem;
+  border-radius: 12px;
+  color: #000;
+}
+
+.product-why-helps h4,
+.product-key-ingredients h4,
+.product-usage h4 {
+  color: #000;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* Markdown content styling */
+.markdown-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.markdown-content h3 {
+  font-size: 1.4rem;
+  color: #000;
+  margin: 1.5rem 0 1rem;
+}
+
+.markdown-content h4 {
+  font-size: 1.2rem;
+  color: #000;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.markdown-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .results-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .results-image-container {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .sticky-image-container {
+    position: relative;
+    top: 0;
+  }
+  
+  .results-content {
+    padding: 1rem;
+  }
+  
+  .analysis-section, 
+  .recommendations-section, 
+  .usage-plan-section, 
+  .additional-suggestions {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skin-analyzer-container {
+    padding: 1rem;
+  }
+  
+  .analysis-results {
+    padding: 1rem;
+  }
+  
+  .results-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .product-section {
+    padding: 1rem;
+  }
+}
+
+/* Usage Plan Styling */
+.usage-plan-section h3,
+.usage-plan-section h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  clear: both;
+}
+
+.usage-plan-section ol,
+.usage-plan-section ul {
+  padding-left: 1.75rem;
+  margin-bottom: 1.5rem;
+  list-style-position: outside;
+}
+
+.usage-plan-section li {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  padding-left: 0.5rem;
+}
+
+/* Product sections styling */
+.product-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 3px solid #000;
+  background-color: #fff;
+}
+
+/* Simple product section styling */
+/* Product recommendations in markdown format */
+.recommendations-section {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 40px 0 20px 0;
+  padding: 0;
+  color: #000;
+}
+
+.subsection-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 30px 0 15px 0;
+  padding: 0;
+  color: #000;
+}
+
+.recommendation-intro {
+  margin-bottom: 25px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.product-section.simple {
+  margin: 25px 0;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.product-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+/* Product details section - Why it helps and ingredients */
+.product-details-section {
+  padding: 15px 0;
+}
+
+.product-why-helps,
+.product-key-ingredients,
+.product-usage {
+  margin-bottom: 20px;
+}
+
+.product-why-helps h4,
+.product-key-ingredients h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+.product-why-helps p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Key section headings */
+.key-section {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  padding: 0;
+}
+
+/* No longer needed - product images removed */
+
+.product-key-ingredients ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.product-key-ingredients li {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  color: #555;
+  position: relative;
+  padding-left: 15px;
+}
+
+.product-key-ingredients li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #777;
+}
+
+/* Removed - view button no longer needed */
+
+.view-product-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 16px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.view-product-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.benefit-section,
+.ingredients-section,
+.usage-section,
+.tips-section {
+  margin-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Section headers */
+.key-section {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #000;
+}
+
+.markdown-content h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.markdown-content h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #000;
+}
+
+.markdown-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+}
+
+.markdown-content strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.key-section {
+  font-weight: 600;
+  color: #000;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Improved list styling */
+.analysis-list,
+.markdown-content ul {
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  list-style-type: none;
+}
+
+.analysis-list li,
+.markdown-content ul li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  padding-left: 1.75rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.analysis-list li:before,
+.markdown-content ul li:before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  color: #000;
+  font-weight: bold;
+}
+
+/* General list styling */
+.markdown-content ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.5rem;
+  list-style-position: outside;
+}
+
+.markdown-content li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  padding-left: 0.25rem;
+}
+
+/* Subsection headers styling */
+.markdown-content h3 + ul,
+.markdown-content h3 + ol,
+.markdown-content h4 + ul,
+.markdown-content h4 + ol {
+  margin-top: 0.75rem;
+}
+
+/* Highlight key information */
+.markdown-content em {
+  font-style: italic;
+  color: #333;
+}

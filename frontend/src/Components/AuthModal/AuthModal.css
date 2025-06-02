@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Background Overlay */
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Modal Box */
+.auth-modal-container {
+  background: #ffffff; /* Clean white background */
+  width: 400px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  text-align: center; /* Center everything */
+}
+.auth-form h2{
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/* Close Button */
+.auth-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #000000;
+  background: none;
+  border: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.auth-close-btn:hover {
+  color: #6b6b6b;
+  transform: scale(1.1);
+}
+
+/* Form Styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.auth-form input {
+  width: 95%;
+  padding: 12px;
+  border: 0.1rem solid #000000;
+  border-radius: 16px;
+  font-size: 14px;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 5px;
+}
+
+.auth-form input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.auth-form button {
+  background: #ffffff;
+  color: #000000;
+  padding: 12px;
+  width: 101%;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px; /* Space between fields and button */
+  font-family: "Quicksand", sans-serif;
+}
+
+.auth-form button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Form Switch Link */
+.auth-form p {
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+  margin-top: 15px; /* Move below buttons */
+  font-family: "Quicksand", sans-serif;
+}
+
+.auth-form p button {
+  background: none;
+  border: none;
+  color: #000000;
+  padding: 5px 10px;
+  border-radius: 16px;
+  width: auto;
+  margin: 0 0 0 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+}
+
+.auth-form p button:hover {
+  background: none;
+  color: #6b6b6b;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

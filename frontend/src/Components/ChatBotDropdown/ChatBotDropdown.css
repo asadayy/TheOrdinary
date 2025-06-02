@@ -1,0 +1,121 @@
+.chatbot-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%; /* display below the toggle button */
+    margin-top: 8px;
+    width: 350px; /* Adjusted width */
+    max-height: 450px; /* Adjusted max height */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Hide overflowing content */
+    font-family: 'Quicksand', sans-serif; /* Use consistent font */
+    z-index: 9999;
+    /* Prevent page scroll interference */
+    contain: content;
+    transform: translateZ(0);
+}
+
+.chatbot-messages {
+    flex-grow: 1; /* Allow messages to take available space */
+    overflow-y: auto; /* Enable vertical scrolling for messages */
+    padding: 15px; /* Padding inside the message area */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+    max-height: calc(450px - 60px); /* Subtract input area height to ensure content fits */
+    /* Prevent scroll chaining to page */
+    overscroll-behavior: contain;
+    height: auto;
+}
+
+/* Individual message styling */
+.chatbot-message {
+    max-width: 80%; /* Limit message width */
+    padding: 10px 14px; /* Padding inside message bubble */
+    border-radius: 18px; /* Rounded corners for message bubbles */
+    line-height: 1.4; /* Improved line spacing */
+    word-wrap: break-word; /* Break long words */
+}
+
+/* User message styling */
+.chatbot-message.user {
+    align-self: flex-end; /* Align user messages to the right */
+    background-color: #000000; /* Black background for user messages */
+    color: #ffffff; /* White text for user messages */
+    border-bottom-right-radius: 4px; /* Slightly less rounded corner for the last bubble edge */
+}
+
+/* Chatbot message styling */
+.chatbot-message.bot {
+    align-self: flex-start; /* Align bot messages to the left */
+    background-color: #f2f2f2; /* Light grey background for bot messages */
+    color: #333333; /* Dark grey text for bot messages */
+    border-bottom-left-radius: 4px; /* Slightly less rounded corner for the last bubble edge */
+}
+
+.chatbot-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #cccccc; /* Separator line */
+    background-color: #ffffff; /* White background */
+}
+
+.chatbot-input input {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 10px; /* Padding inside input field */
+    border: 1px solid #cccccc; /* Subtle border */
+    border-radius: 20px; /* Rounded input field */
+    margin: 0 8px; /* Space around input field */
+    font-size: 0.95rem;
+    font-family: 'Quicksand', sans-serif;
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth transition for border */
+}
+
+.chatbot-input input:focus {
+    border-color: #000000; /* Black border on focus */
+}
+
+/* Icon button styling */
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px; /* Padding around icons */
+    display: flex; /* Center icon */
+    align-items: center;
+    justify-content: center;
+    color: #666666; /* Grey icon color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.icon-btn:hover {
+    color: #000000; /* Black icon color on hover */
+}
+
+/* Scrollbar styling (optional, for better appearance) */
+.chatbot-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+    border-radius: 4px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+    background: #999999; 
+}
+
+.chat-label {
+    margin-left: 6px;
+    font-size: 14px;
+}

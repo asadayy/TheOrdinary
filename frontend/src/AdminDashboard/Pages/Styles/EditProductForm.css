@@ -1,0 +1,134 @@
+.edit-product-form {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.edit-product-form .error {
+    background-color: #fee;
+    color: #c00;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.edit-product-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.edit-product-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.edit-product-form input[type="text"],
+.edit-product-form input[type="number"],
+.edit-product-form textarea,
+.edit-product-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.edit-product-form input[type="text"]:focus,
+.edit-product-form input[type="number"]:focus,
+.edit-product-form textarea:focus,
+.edit-product-form select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.edit-product-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.edit-product-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+.edit-product-form .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.edit-product-form .save-btn,
+.edit-product-form .cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-product-form .save-btn {
+    background-color: #3498db;
+    color: white;
+    flex: 1;
+}
+
+.edit-product-form .save-btn:hover {
+    background-color: #2980b9;
+}
+
+.edit-product-form .cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    flex: 1;
+}
+
+.edit-product-form .cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Image preview section */
+.edit-product-form .image-preview {
+    margin-top: 1rem;
+    max-width: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-product-form .image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .edit-product-form {
+        padding: 1.5rem;
+    }
+
+    .edit-product-form .form-actions {
+        flex-direction: column;
+    }
+
+    .edit-product-form .save-btn,
+    .edit-product-form .cancel-btn {
+        width: 100%;
+    }
+}

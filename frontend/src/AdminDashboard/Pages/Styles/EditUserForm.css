@@ -1,0 +1,106 @@
+.edit-user-form {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.edit-user-form .error {
+    background-color: #fee;
+    color: #c00;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.edit-user-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.edit-user-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.edit-user-form input[type="text"],
+.edit-user-form input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.edit-user-form input[type="text"]:focus,
+.edit-user-form input[type="email"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.edit-user-form input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.edit-user-form .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.edit-user-form .save-btn,
+.edit-user-form .cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-user-form .save-btn {
+    background-color: #3498db;
+    color: white;
+    flex: 1;
+}
+
+.edit-user-form .save-btn:hover {
+    background-color: #2980b9;
+}
+
+.edit-user-form .cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    flex: 1;
+}
+
+.edit-user-form .cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .edit-user-form {
+        padding: 1.5rem;
+    }
+
+    .edit-user-form .form-actions {
+        flex-direction: column;
+    }
+
+    .edit-user-form .save-btn,
+    .edit-user-form .cancel-btn {
+        width: 100%;
+    }
+}

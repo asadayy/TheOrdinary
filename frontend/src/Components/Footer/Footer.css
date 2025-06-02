@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Footer Container */
+.footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Newsletter Section */
+.newsletter {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.newsletter p {
+    font-size: 15px;
+    opacity: 0.85;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.newsletter input {
+    width: 280px;
+    padding: 12px;
+    border: none;
+    border-radius: 16px;
+    font-size: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.newsletter input:focus {
+    outline: 1px solid #000000;
+}
+
+/* Newsletter Subscribe Button */
+.newsletter button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 16px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter button:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.newsletter button:active {
+    background-color: #d8d8d8;
+    transform: translateY(1px);
+}
+
+/* Footer Links Section */
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-column {
+    max-width: 220px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Footer Links */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 6px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #c9c9c9;
+    text-decoration: underline;
+}
+
+/* Email Links */
+.footer-column a[href^="https://mail.google.com"] {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a[href^="https://mail.google.com"]:hover {
+    text-decoration: underline;
+    color: #c9c9c9;
+}
+
+/* Phone Copy */
+.footer-column p[style*="cursor"] {
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+.footer-column p[style*="cursor"]:hover {
+    color: #5dade2;
+    text-decoration: underline;
+}
+
+/* Copied message */
+.footer-column span {
+    font-size: 12px;
+    color: lightgreen;
+    margin-left: 5px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d4af7a;
+    transform: scale(1.15);
+}
+
+.social-icons img {
+    width: 20px;
+    height: auto;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter h2 {
+        font-size: 22px;
+    }
+
+    .footer-column h3 {
+        font-size: 15px;
+    }
+
+    .footer-column ul li a {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,458 @@
+{
+    "skincare": [
+        {
+            "name": "Glycolic Acid 7% Exfoliating Toner",
+            "price": 8.70,
+            "description": "A daily glycolic acid toner that smooths skin texture, evens tone, and enhances luminosity.",
+            "targets": ["Textural Irregularities", "Dullness", "Uneven Skin Tone"],
+            "suited_to": "All Skin Types",
+            "format": "Toner: Water-Based",
+            "key_ingredients": ["Glycolic Acid", "Aloe Barbadensis Leaf Water", "Panax Ginseng Root Extract", "Tasmannia Lanceolata Fruit/Leaf Extract"],
+            "image_url": "Ordinary/Products/Skincare/Glycolic-Acid.jpg"
+        },
+        {
+            "name": "Serum Foundation",
+            "price": 7.50,
+            "description": "A light foundation with a natural finish.",
+            "targets": ["Coverage"],
+            "suited_to": "All Skin Types",
+            "format": "Suspension",
+            "key_ingredients": ["Cyclopentasiloxane", "Coconut Alkanes", "Dimethicone", "Tocopherol"],
+            "image_url": "Ordinary/Products/Skincare/Serum Foundation.jpg"
+        },
+        {
+            "name": "Caffeine Solution 5% + EGCG",
+            "price": 9.20,
+            "description": "A depuffing solution for tired eyes.",
+            "targets": ["Dark Circles", "Puffiness"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Caffeine", "Epigallocatechin Gallatyl Glucoside"],
+            "image_url": "Ordinary/Products/Skincare/Caffeine Solution.jpg"
+        },
+        {
+            "name": "Hyaluronic Acid 2% + B5 (with Ceramides)",
+            "price": 9.90,
+            "description": "A hydrating serum to smooth and visibly reduce lines and wrinkles.",
+            "targets": ["Dehydration", "Signs of Aging"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Hyaluronic Acid", "Ceramides", "Pro-Vitamin B5"],
+            "image_url": "Ordinary/Products/Skincare/Hyaluronic Acid.jpg"
+        },
+        {
+            "name": "GF 15% Solution",
+            "price": 15.50,
+            "description": "An age-support serum with 15% growth factors to help regenerate aging skin.",
+            "targets": ["Advanced Signs of Aging"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["IGF", "EGF", "TGF"],
+            "image_url": "Ordinary/Products/Skincare/GF Solution.jpg"
+        },
+        {
+            "name": "Glucoside Foaming Cleanser",
+            "price": 12.50,
+            "description": "A gentle, foaming cleanser that cleanses while maintaining moisture balance.",
+            "targets": ["Cleansing", "Textural Irregularities"],
+            "suited_to": "Oily Skin",
+            "format": "Cleanser: Foaming",
+            "key_ingredients": ["Decyl Glucoside", "Coco-Glucoside"],
+            "image_url": "Ordinary/Products/Skincare/Glucoside Foaming Cleanser.jpg"
+        },
+        {
+            "name": "Natural Moisturizing Factors + PhytoCeramides",
+            "price": 10.80,
+            "description": "A nourishing moisturizer that targets dryness.",
+            "targets": ["Dryness"],
+            "suited_to": "Dry Skin",
+            "format": "Moisturizer: Rich Cream",
+            "key_ingredients": ["Glycosphingolipids", "Glycolipids", "Fatty Acids", "Sodium Hyaluronate"],
+            "image_url": "Ordinary/Products/Skincare/Natural Moisturizing Factors + PhytoCeramides.jpg"
+        },
+        {
+            "name": "Niacinamide 10% + Zinc 1%",
+            "price": 6.00,
+            "description": "A universal serum for blemish-prone skin that smooths, brightens, and supports.",
+            "targets": ["Textural Irregularities", "Dryness", "Dullness", "Visible Shine", "Signs of Congestion"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Niacinamide", "Zinc PCA"],
+            "image_url": "Ordinary/Products/Skincare/Niacinamide.jpg"
+        },
+        {
+            "name": "Natural Moisturizing Factors + HA",
+            "price": 6.70,
+            "description": "A lightweight moisturizer that hydrates and supports the skin barrier.",
+            "targets": ["Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Emulsion",
+            "key_ingredients": ["Sodium Hyaluronate", "Arginine", "Sodium PCA"],
+            "image_url": "Ordinary/Products/Skincare/Natural Moisturizing Factors + HA.jpg"
+        },
+        {
+            "name": "Squalane + Amino Acids Lip Balm",
+            "price": 9.50,
+            "description": "A multi-use moisturizing balm for lips, elbows, and cuticles.",
+            "targets": ["Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Balm",
+            "key_ingredients": ["Squalane", "Amino Acids"],
+            "image_url": "Ordinary/Products/Skincare/Squalane + Amino Acids Lip Balm.jpg"
+        },
+        {
+            "name": "Salicylic Acid 2% Solution",
+            "price": 6.70,
+            "description": "A serum formulated to target acne and promote skin healing.",
+            "targets": ["Acne", "Textural Irregularities", "Signs of Congestion"],
+            "suited_to": "Acne-Prone Skin",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Salicylic Acid"],
+            "image_url": "Ordinary/Products/Skincare/Salicylic Acid.jpg"
+        },
+        {
+            "name": "Multi-Peptide + Copper Peptides 1% Serum",
+            "price": 32.00,
+            "description": "An advanced age-supporting serum with antioxidant support.",
+            "targets": ["Advanced Signs of Aging", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Copper Tripeptide-1", "Lactococcus Ferment Lysate", "Acetyl Hexapeptide-8"],
+            "image_url": "Ordinary/Products/Skincare/Multi-Peptide.jpg"
+        },
+        {
+            "name": "Argireline Solution 10%",
+            "price": 9.70,
+            "description": "A 'non-injective' solution for dynamic lines.",
+            "targets": ["Early Signs of Aging", "Crow's Feet", "Signs of Aging"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Acetyl Hexapeptide-8"],
+            "image_url": "Ordinary/Products/Skincare/Argireline Solution.jpg"
+        },
+        {
+            "name": "Glycolipid Cream Cleanser",
+            "price": 12.50,
+            "description": "A gentle cream cleanser that effectively removes makeup.",
+            "targets": ["Cleansing", "Barrier Support"],
+            "suited_to": "All Skin Types",
+            "format": "Cleanser: Cream",
+            "key_ingredients": ["Glycolipids"],
+            "image_url": "Ordinary/Products/Skincare/Glycolipid Cream Cleanser.jpg"
+        },
+        {
+            "name": "Natural Moisturizing Factors + Beta Glucan",
+            "price": 6.50,
+            "description": "A lightweight gel moisturizer to support surface hydration.",
+            "targets": ["Dryness"],
+            "suited_to": "Oily Skin",
+            "format": "Moisturizer: Gel",
+            "key_ingredients": ["Amino Acids", "Ceramides", "Beta-Glucan"],
+            "image_url": "Ordinary/Products/Skincare/Natural Moisturizing Factors + Beta Glucan.jpg"
+        }
+    ],
+    "hair_body": [
+        {
+            "name": "Natural Moisturizing Factors + Inulin Body Lotion",
+            "price": 15.00,
+            "description": "A lightweight, non-greasy body lotion for instant and all-day hydration.",
+            "targets": ["Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Moisturizer: Cream",
+            "key_ingredients": ["Amino Acids", "Urea", "PCA", "Inulin"],
+            "image_url": "Ordinary/Products/Body + Hair/Natural Moisturizing Factors + Inulin Body Lotion.jpg"
+        },
+        {
+            "name": "Salicylic Acid 0.5% Body Serum",
+            "price": 15.00,
+            "description": "An exfoliating body serum to clear blemishes and smooth skin texture.",
+            "targets": ["Signs of Congestion"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Salicylic Acid"],
+            "image_url": "Ordinary/Products/Body + Hair/Salicylic Acid Body Serum.jpg"
+        },
+        {
+            "name": "Niacinamide 5% Face and Body Emulsion",
+            "price": 14.00,
+            "description": "A lightweight emulsion to even skin tone and reduce dark spots.",
+            "targets": ["Uneven Skin Tone", "Dryness", "Signs of Aging"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Emulsion",
+            "key_ingredients": ["Niacinamide"],
+            "image_url": "Ordinary/Products/Body + Hair/Niacinamide Face and Body Emulsion.jpg"
+        },
+        {
+            "name": "Multi-Peptide Lash and Brow Serum",
+            "price": 14.90,
+            "description": "A volumizing lash and brow serum for thicker, fuller, and healthier-looking hair.",
+            "targets": ["Hair"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Myristoyl Pentapeptide-17", "Biotinoyl Tripeptide-1", "Oligopeptide-2", "Acetyl Tetrapeptide-3"],
+            "image_url": "Ordinary/Products/Body + Hair/Multi-Peptide Lash and Brow Serum.jpg"
+        },
+        {
+            "name": "Multi-Peptide Serum for Hair Density",
+            "price": 22.80,
+            "description": "A lightweight serum for fuller, healthier-looking hair.",
+            "targets": ["Hair"],
+            "suited_to": "All Hair Types",
+            "format": "Serum: Water-Based",
+            "key_ingredients": ["Caffeine", "Biotinoyl Tripeptide-1", "Acetyl Tetrapeptide-3", "Pisum Sativum Extract"],
+            "image_url": "Ordinary/Products/Body + Hair/Multi-Peptide Serum for Hair Density.jpg"
+        },
+        {
+            "name": "100% Plant-Derived Squalane",
+            "price": 10.40,
+            "description": "A fast-absorbing oil-like serum for enhanced hydration.",
+            "targets": ["Dryness", "Hair"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Anhydrous",
+            "key_ingredients": ["Squalane"],
+            "image_url": "Ordinary/Products/Body + Hair/Plant-Derived Squalane.jpg"
+        },
+        {
+            "name": "100% Organic Cold-Pressed Moroccan Argan Oil",
+            "price": 7.80,
+            "description": "A nourishing oil ideal for dry, flaky skin and hair.",
+            "targets": ["Dryness", "Hair"],
+            "suited_to": "Dry Skin",
+            "format": "Oil",
+            "key_ingredients": ["Argania Spinosa Kernel Oil"],
+            "image_url": "Ordinary/Products/Body + Hair/Organic Cold-Pressed Moroccan Argan Oil.jpg"
+        },
+        {
+            "name": "100% Cold-Pressed Virgin Marula Oil",
+            "price": 11.40,
+            "description": "A rich antioxidant oil that enhances skin radiance.",
+            "targets": ["Dryness", "Antioxidant Support", "Hair"],
+            "suited_to": "All Skin Types",
+            "format": "Oil",
+            "key_ingredients": ["Sclerocarya Birrea Seed Oil"],
+            "image_url": "Ordinary/Products/Body + Hair/Cold-Pressed Virgin Marula Oil.jpg"
+        },
+        {
+            "name": "Sulphate 4% Cleanser for Body and Hair",
+            "price": 9.20,
+            "description": "A gentle, fragrance-free cleanser for daily body and hair care.",
+            "targets": ["Cleansing", "Hair"],
+            "suited_to": "All Hair Types",
+            "format": "Cleanser",
+            "key_ingredients": ["Sodium Laureth Sulfate"],
+            "image_url": "Ordinary/Products/Body + Hair/Sulphate Cleanser for Body and Hair.jpg"
+        },
+        {
+            "name": "Behentrimonium Chloride 2% Conditioner",
+            "price": 9.20,
+            "description": "A lightweight, fragrance-free conditioning formula.",
+            "targets": ["Hair"],
+            "suited_to": "All Hair Types",
+            "format": "Conditioner",
+            "key_ingredients": ["Behentrimonium Chloride"],
+            "image_url": "Ordinary/Products/Body + Hair/Behentrimonium Chloride Conditioner.jpg"
+        },
+        {
+            "name": "Natural Moisturizing Factors + HA for Scalp",
+            "price": 14.70,
+            "description": "A lightweight hydrating serum for the scalp.",
+            "targets": ["Hair"],
+            "suited_to": "All Skin Types",
+            "format": "Serum: Emulsion",
+            "key_ingredients": ["Sodium Hyaluronate", "Arginine", "Sodium PCA", "Lactic Acid"],
+            "image_url": "Ordinary/Products/Body + Hair/Natural Moisturizing Factors + HA for Scalp.jpg"
+        }
+    ],
+    "sets_collections": [
+        {
+            "name": "The Nightly Set",
+            "price": 25.00,
+            "description": "A nighttime regimen to hydrate, brighten and target signs of aging.",
+            "targets": ["Signs of Aging", "Dryness", "Dullness", "Textural Irregularities", "Uneven Skin Tone"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Hyaluronic Acid", "Retinol", "Vitamin C", "Peptides"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Nightly Set.jpg"
+        },
+        {
+            "name": "The Mini Discovery Set",
+            "price": 28.80,
+            "description": "An introduction to The Ordinary featuring miniature sizes of our regimen essentials.",
+            "targets": ["All Skin Types"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Hyaluronic Acid", "Peptides", "Vitamin C"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Mini Discovery Set.jpg"
+        },
+        {
+            "name": "The Multi-Peptide Collection",
+            "price": 36.00,
+            "description": "A collection of multi-peptide formulas for comprehensive age support across the face and eyes.",
+            "targets": ["Signs of Aging", "Crow's Feet", "Dark Circles", "Puffiness", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Peptides", "Hyaluronic Acid", "Retinol", "Vitamin E"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Multi-Peptide Collection.jpg"
+        },
+        {
+            "name": "The Acne Set",
+            "price": 15.80,
+            "description": "A 3-step regimen with Salicylic Acid 2% Solution for clearer skin.",
+            "targets": ["Acne"],
+            "suited_to": "Acne-Prone Skin",
+            "format": "Set",
+            "key_ingredients": ["Salicylic Acid", "Niacinamide", "Hyaluronic Acid"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Acne Set.jpg"
+        },
+        {
+            "name": "The Bright Set",
+            "price": 23.50,
+            "description": "A set of formulations to visibly even skin tone and boost skin radiance.",
+            "targets": ["Cleansing", "Dark Circles", "Dullness", "Textural Irregularities", "Puffiness", "Uneven Skin Tone"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Glycolic Acid", "Alpha Arbutin", "Caffeine", "Hyaluronic Acid"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Bright Set.jpg"
+        },
+        {
+            "name": "The Age Support Set",
+            "price": 41.80,
+            "description": "A regimen including multi-peptide formulations to target signs of aging.",
+            "targets": ["Early Signs of Aging", "Signs of Aging"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Peptides", "Hyaluronic Acid", "Vitamin C"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Age Support Set.jpg"
+        },
+        {
+            "name": "The Balance Set",
+            "price": 29.60,
+            "description": "A balanced regimen for skin cleansing and hydration.",
+            "targets": ["Cleansing", "Dryness", "Dullness", "Textural Irregularities", "Visible Shine", "Signs of Congestion", "Uneven Skin Tone"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Squalane", "Salicylic Acid", "Niacinamide", "Hyaluronic Acid"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Balance Set.jpg"
+        },
+        {
+            "name": "The Daily Set",
+            "price": 21.70,
+            "description": "A daily regimen to maintain moisture and hydration for the skin.",
+            "targets": ["Dryness", "Cleansing"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Squalane", "Hyaluronic Acid", "Glycerin"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Daily Set.jpg"
+        },
+        {
+            "name": "The Glycolic Acid Set",
+            "price": 15.00,
+            "description": "Both sizes of our multi-benefit exfoliating toner for smoother, brighter skin.",
+            "targets": ["Uneven Skin Tone", "Dullness", "Textural Irregularities"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Glycolic Acid", "Aloe Vera", "Glycerin"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Glycolic Acid Set.jpg"
+        },
+        {
+            "name": "The Resurface & Hydrate Set",
+            "price": 10.00,
+            "description": "A miniature pairing for advanced exfoliation and hydration, to brighten and smooth skin.",
+            "targets": ["Dryness", "Textural Irregularities", "Signs of Aging", "Signs of Congestion", "Uneven Skin Tone"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Hyaluronic Acid", "Salicylic Acid", "Vitamin C"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Resurface & Hydrate Set.jpg"
+        },
+        {
+            "name": "The Cleanser Discovery Set",
+            "price": 18.00,
+            "description": "An exploratory set of cleansing formulations.",
+            "targets": ["Cleansing", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Set",
+            "key_ingredients": ["Decyl Glucoside", "Glycolipids", "Squalane"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Cleanser Discovery Set.jpg"
+        },
+        {
+            "name": "The Most Loved Collection",
+            "price": 25.10,
+            "description": "A collection of our most-loved products.",
+            "targets": ["Signs of Aging", "Dullness", "Dark Circles", "Textural Irregularities", "Puffiness", "Signs of Congestion", "Visible Shine", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Peptides", "Vitamin C", "Hyaluronic Acid", "Niacinamide"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Most Loved Collection.jpg"
+        },
+        {
+            "name": "The Barrier Support Collection",
+            "price": 61.90,
+            "description": "A regimen that includes products designed to rebuild and strengthen the skin barrier.",
+            "targets": ["Signs of Aging", "Look of Redness", "Barrier Support", "Dryness", "Cleansing"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Ceramides", "Hyaluronic Acid", "Niacinamide", "Squalane"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Barrier Support Collection.jpg"
+        },
+        {
+            "name": "The Smooth Skin Collection",
+            "price": 25.20,
+            "description": "A collection that includes some well-loved formulas for targeting uneven skin texture.",
+            "targets": ["Dullness", "Uneven Skin Tone", "Textural Irregularities", "Signs of Congestion", "Visible Shine", "Dryness", "Cleansing"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Peptides", "Niacinamide", "Vitamin C", "Hyaluronic Acid"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Smooth Skin Collection.jpg"
+        },
+        {
+            "name": "The Hair & Scalp Collection",
+            "price": 31.50,
+            "description": "A daily collection dedicated to promoting healthier-looking hair and scalp.",
+            "targets": ["Hair", "Dullness", "Uneven Skin Tone", "Textural Irregularities"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Biotin", "Hyaluronic Acid", "Squalane", "Amino Acids"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Hair & Scalp Collection.jpg"
+        },
+        {
+            "name": "The Eye, Lash & Brow Collection",
+            "price": 39.90,
+            "description": "A collection of eye care formulations designed to target signs of aging, and support fuller, thicker, healthier-looking lashes and brows.",
+            "targets": ["Hair", "Crow's Feet", "Signs of Aging", "Dark Circles", "Puffiness"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Peptides", "Hyaluronic Acid", "Vitamin E", "Caffeine"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Eye, Lash & Brow Collection.jpg"
+        },
+        {
+            "name": "The Uneven Skin Tone Collection",
+            "price": 44.20,
+            "description": "A collection featuring key ingredients for a more even skin tone and a radiant complexion.",
+            "targets": ["Signs of Aging", "Dullness", "Look of Redness", "Antioxidant Support", "Uneven Skin Tone", "Textural Irregularities", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Vitamin C", "Niacinamide", "Alpha Arbutin", "Retinol", "Hyaluronic Acid"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Uneven Skin Tone Collection.jpg"
+        },
+        {
+            "name": "The Vitamin C Collection",
+            "price": 35.80,
+            "description": "A collection to brighten skin and help target visible signs of aging.",
+            "targets": ["Dark Circles", "Uneven Skin Tone", "Dullness", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Vitamin C", "Hyaluronic Acid", "Peptides"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Vitamin C Collection.jpg"
+        },
+        {
+            "name": "The Antioxidant Collection",
+            "price": 36.10,
+            "description": "A collection featuring three different types of antioxidant formulas.",
+            "targets": ["Signs of Aging", "Dullness", "Antioxidant Support", "Uneven Skin Tone", "Dryness"],
+            "suited_to": "All Skin Types",
+            "format": "Collection",
+            "key_ingredients": ["Vitamin C", "Niacinamide", "Hyaluronic Acid", "Ferulic Acid", "Green Tea Extract"],
+            "image_url": "Ordinary/Products/Sets & Collections/The Antioxidant Collection.jpg"
+        }
+    ]
+}

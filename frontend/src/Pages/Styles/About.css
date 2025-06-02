@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* General Container */
+.about-container {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #121212;
+}
+
+/* Top Section */
+.about-top {
+    display: flex;
+    width: 100%;
+    background-color: #0a0a0a; /* Nearly black */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    width: 50%;
+    color: white;
+    text-align: justify;
+    padding: 60px 0;
+}
+
+.about-text h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 32px;
+    margin-bottom: 24px;
+    padding: 0 60px;
+    font-weight: 600;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 0 60px;
+    letter-spacing: 0.03em;
+}
+
+.about-img-top {
+    width: 50%;
+    height: 611px;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.about-img-top:hover {
+    filter: grayscale(80%);
+}
+
+/* Middle Section */
+.about-middle {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.about-left {
+    width: 20%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.vertical-text {
+    transform: rotate(-90deg);
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    white-space: nowrap;
+    letter-spacing: 2px;
+}
+
+.about-content {
+    width: 60%;
+    padding: 60px 0;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 0 50px;
+    color: #1a1a1a;
+}
+
+.about-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.about-button {
+    font-family: 'Quicksand', sans-serif;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.about-right {
+    width: 20%;
+    background-color: #1a1a1a;
+    min-height: 500px;
+}
+
+/* Bottom Section */
+.about-bottom {
+    display: flex;
+    width: 100%;
+}
+
+.about-img-bottom {
+    width: 50%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.about-img-bottom:hover {
+    filter: grayscale(80%);
+}
+
+.about-goal {
+    width: 50%;
+    background-color: #0a0a0a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+.about-goal h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 28px;
+    margin-bottom: 24px;
+    padding: 0 40px;
+    font-weight: 600;
+}
+
+.about-goal p {
+    padding: 0 40px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .about-top, .about-bottom {
+        flex-direction: column;
+    }
+    
+    .about-text, .about-img-top, .about-img-bottom, .about-goal {
+        width: 100%;
+    }
+    
+    .about-middle {
+        flex-direction: column;
+    }
+    
+    .about-left, .about-content, .about-right {
+        width: 100%;
+    }
+    
+    .about-left, .about-right {
+        min-height: 100px;
+    }
+    
+    .vertical-text {
+        transform: none;
+        padding: 20px 0;
+    }
+}

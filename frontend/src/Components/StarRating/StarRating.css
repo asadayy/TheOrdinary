@@ -1,0 +1,32 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star {
+  color: #ddd;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0 2px;
+}
+
+.star-rating.sm .star {
+  font-size: 1rem;
+}
+
+.star-rating.md .star {
+  font-size: 1.5rem;
+}
+
+.star-rating.lg .star {
+  font-size: 2rem;
+}
+
+.star.active {
+  color: #000; /* Using black to match the site's monochromatic theme */
+}
+
+.star-rating.readonly .star {
+  cursor: default;
+}

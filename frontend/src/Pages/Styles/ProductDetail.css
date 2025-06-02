@@ -1,0 +1,335 @@
+.page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Product Image */
+.product-detail .product-image {
+    width: 420px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail .product-image:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Details */
+.product-detail .product-details {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Product Titles */
+.product-details h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.product-details h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px auto 10px;
+    /* margin-bottom: 10px; */
+    color: #000000;
+}
+
+.product-details h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Product Features List */
+.product-details ul {
+    margin-left: 40px;
+    list-style-type: square;
+    padding: 0;
+}
+
+.product-details ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+/* Buy Button */
+.product-details .buy-btn {
+    padding: 12px 18px;
+    background: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.product-details .buy-btn:hover {
+    background: #000000;
+    transform: scale(1.05);
+}
+
+.product-details .buy-btn:active {
+    background: #000000;
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product-detail {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .product-detail .product-image {
+        width: 80%;
+        max-width: 400px;
+        margin-bottom: 15px;
+    }
+
+    .product-details ul {
+        margin-left: 0;
+    }
+
+    .product-details .buy-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-detail {
+        padding: 15px;
+        margin-top: 20px; /* Further adjust margin-top for mobile */
+    }
+
+    .product-detail .product-image {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .product-details h2 {
+        font-size: 26px;
+    }
+
+    .product-details h3 {
+        font-size: 22px;
+    }
+
+    .product-details h4 {
+        font-size: 16px;
+    }
+
+    .product-details ul li {
+        font-size: 15px;
+    }
+
+    .product-details .buy-btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+/* Product Rating Display */
+.product-rating-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating-count {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Reviews Container */
+.reviews-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.reviews-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.reviews-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #000;
+}
+
+/* Reviews List Container */
+.reviews-list-container {
+    margin-top: 40px;
+}
+
+.reviews-subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.reviews-subtitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+}
+
+.rating-section h3 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    resize: vertical;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.submit-rating-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-rating-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.submit-rating-btn:not(:disabled):hover {
+    background-color: #333;
+    transform: scale(1.03);
+}
+
+.rating-success {
+    text-align: center;
+    padding: 15px;
+}
+
+.rating-success p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.rate-again-btn {
+    background-color: white;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px 18px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.rate-again-btn:hover {
+    background-color: #000;
+    color: white;
+}
+
+/* Responsive styles for rating section */
+@media (max-width: 1024px) {
+    .rating-section {
+        padding: 20px;
+    }
+    
+    .form-group textarea {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .rating-section {
+        padding: 15px;
+    }
+    
+    .rating-section h3 {
+        font-size: 18px;
+    }
+    
+    .form-group label {
+        font-size: 14px;
+    }
+    
+    .submit-rating-btn {
+        width: 100%;
+        padding: 10px;
+    }
+}
