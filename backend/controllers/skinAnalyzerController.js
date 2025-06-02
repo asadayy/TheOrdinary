@@ -18,7 +18,7 @@ const getProductData = () => {
 // Analyze skin image and provide recommendations
 const analyzeSkin = asyncHandler(async (req, res) => {
   // Check if image was uploaded
-  if (!req.file) {
+  if (!req.file || !req.file.buffer) {
     res.status(400);
     throw new Error('Please upload an image');
   }
@@ -32,18 +32,17 @@ const analyzeSkin = asyncHandler(async (req, res) => {
       return res.status(500).json({ message: 'No product data available for analysis' });
     }
     
-    // Process image with Gemini API
-    const imagePath = req.file.path;
-    console.log('Processing image:', imagePath);
+    // Process image with Gemini API using the in-memory buffer
+    const imageBuffer = req.file.buffer;
+    const mimeType = req.file.mimetype;
+    console.log('Processing image from memory buffer, mimetype:', mimeType);
     
     try {
-      const analysisResult = await analyzeSkinWithGemini(imagePath, products);
+      // Pass the buffer and mimetype directly instead of a file path
+      const analysisResult = await analyzeSkinWithGemini(imageBuffer, mimeType, products);
       
       // Parse the Gemini response
       const parsedResult = parseAnalysisResponse(analysisResult);
-      
-      // Optional: Delete the image file after analysis to save space
-      // fs.unlinkSync(imagePath);
       
       res.status(200).json({
         success: true,
@@ -65,11 +64,7 @@ const analyzeSkin = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    // Clean up uploaded file in case of error
-    if (req.file && req.file.path) {
-      fs.unlinkSync(req.file.path);
-    }
-    
+    // No need to clean up files since we're using memory storage
     res.status(500);
     throw new Error(`Error analyzing skin image: ${error.message}`);
   }
