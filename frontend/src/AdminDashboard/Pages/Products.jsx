@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import EditProductForm from './EditProductForm';
 import './Styles/Products.css';
+import API_URL from '../../config/api';
 
 function Products() {
     const [productData, setProductData] = useState([]);
@@ -18,7 +19,7 @@ function Products() {
         const fetchProducts = async () => {
             try {
                 setLoading(true);
-                const url = new URL('http://localhost:5000/api/products');
+                const url = new URL(`${API_URL}/api/products`);
                 url.searchParams.append('page', currentPage);
                 url.searchParams.append('limit', productsPerPage);
                 if (searchTerm) {
@@ -101,7 +102,7 @@ function Products() {
     const confirmDelete = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch(`http://localhost:5000/api/products/${selectedProduct._id}`, {
+            const response = await fetch(`${API_URL}/api/products/${selectedProduct._id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`,

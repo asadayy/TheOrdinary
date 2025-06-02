@@ -13,18 +13,18 @@ const IMAGE_NOT_FOUND_URL = "/Image Not Found.png";
 
 // Function to get the correct image URL
 const getImageUrl = (imageUrl) => {
-  if (!imageUrl) {
-    return IMAGE_NOT_FOUND_URL;
-  }
-  
   try {
+    if (!imageUrl) {
+      return IMAGE_NOT_FOUND_URL;
+    }
+
     // If the image URL is already a full URL, return it as is
     if (imageUrl.startsWith('http')) {
       return imageUrl;
     }
     
     // Use backend static route for consistent image handling
-    return `http://localhost:5000/static/${imageUrl}`;
+    return `${API_URL}/static/${imageUrl}`;
   } catch (error) {
     console.error('Error processing image URL:', error);
     return IMAGE_NOT_FOUND_URL;
@@ -130,7 +130,7 @@ const ProductDetail = () => {
             try {
                 // Fetch all products in the category
                 const response = await axios.get(
-                    `http://localhost:5000/api/products?category=${encodeURIComponent(dbCategory)}`
+                    `${API_URL}/api/products?category=${encodeURIComponent(dbCategory)}`
                 );
                 
                 console.log('Fetched products:', response.data.products.length);

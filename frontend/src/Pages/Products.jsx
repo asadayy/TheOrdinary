@@ -5,6 +5,7 @@ import imageNotFound from '../Components/Assets/ImageNotFound.png';
 import StarRating from "../Components/StarRating/StarRating";
 import { useCart } from "../Context/CartContext"; // Adjust path as necessary
 import "./Styles/Products.css";
+import API_URL from "../config/api"; // Import the API URL configuration
 
 // Map route slugs to real DB category names
 const categoryMap = {
@@ -107,7 +108,7 @@ const Products = () => {
                 }
 
                 const response = await axios.get(
-                    `http://localhost:5000/api/products?category=${encodeURIComponent(dbCategory)}&page=${currentPage}&limit=${productsPerPage}`
+                    `${API_URL}/api/products?category=${encodeURIComponent(dbCategory)}&page=${currentPage}&limit=${productsPerPage}`
                 );
 
                 // Check if response has products array

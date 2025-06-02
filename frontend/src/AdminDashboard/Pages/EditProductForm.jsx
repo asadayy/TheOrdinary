@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Styles/EditProductForm.css';
+import API_URL from '../../config/api';
 
 function EditProductForm({ product, onClose, onUpdate }) {
     const [formData, setFormData] = useState({ ...product });
@@ -21,7 +22,7 @@ function EditProductForm({ product, onClose, onUpdate }) {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/products/${formData.id}`, {
+            const response = await fetch(`${API_URL}/api/products/${formData.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
