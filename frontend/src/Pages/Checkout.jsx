@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
-import API_URL from "../config/api";
+import { API_URL } from "../config/api";
 import "./Styles/Checkout.css";
 
 const Checkout = () => {

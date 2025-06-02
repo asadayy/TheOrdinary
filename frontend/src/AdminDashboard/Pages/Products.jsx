@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import EditProductForm from './EditProductForm';
 import './Styles/Products.css';
-import API_URL from '../../config/api';
+import { API_URL } from '../../config/api';
 
 function Products() {
     const [productData, setProductData] = useState([]);

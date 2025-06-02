@@ -5,7 +5,7 @@ import imageNotFound from '../Components/Assets/ImageNotFound.png';
 import StarRating from "../Components/StarRating/StarRating";
 import { useCart } from "../Context/CartContext"; // Adjust path as necessary
 import "./Styles/Products.css";
-import API_URL from "../config/api"; // Import the API URL configuration
+import { API_URL } from "../config/api"; // Import the API URL configuration
 
 // Map route slugs to real DB category names
 const categoryMap = {

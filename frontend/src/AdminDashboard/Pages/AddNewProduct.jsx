@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./Styles/AddNewProduct.css";
-import API_URL from "../../config/api";
+import { API_URL } from "../../config/api";
 
 const AddNewProduct = () => {
   const navigate = useNavigate();

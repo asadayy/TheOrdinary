@@ -1,5 +1,5 @@
 import axios from 'axios';
-import API_URL from '../config/api.js';
+import { API_URL } from '../config/api.js';
 import { useState } from 'react';
 import imageNotFound from '../Components/Assets/ImageNotFound.png';
 import './Styles/SkinAnalyzer.css';

@@ -1,5 +1,5 @@
 import axios from "axios"; // Import axios
-import API_URL from "../config/api.js";
+import { API_URL } from "../config/api.js";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../Context/CartContext";

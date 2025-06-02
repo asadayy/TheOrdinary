@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Styles/EditProductForm.css';
-import API_URL from '../../config/api';
+import { API_URL } from '../../config/api';
 
 function EditProductForm({ product, onClose, onUpdate }) {
     const [formData, setFormData] = useState({ ...product });

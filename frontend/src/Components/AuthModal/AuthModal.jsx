@@ -1,5 +1,5 @@
 import axios from "axios";
-import API_URL from "../../config/api.js";
+import { API_URL } from "../../config/api.js";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../Context/AuthContext.js";
