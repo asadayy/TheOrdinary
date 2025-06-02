@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
@@ -14,7 +15,7 @@ const FeaturedReviews = () => {
     const fetchFeaturedReviews = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/ratings/featured?limit=10');
+        const response = await fetch(`${API_URL}/api/ratings/featured?limit=10`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch featured reviews');

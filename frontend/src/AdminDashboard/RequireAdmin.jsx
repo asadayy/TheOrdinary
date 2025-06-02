@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../config/api.js';
 import { Navigate } from 'react-router-dom';
 
 function RequireAdmin({ children }) {
@@ -13,7 +14,7 @@ function RequireAdmin({ children }) {
             setIsAdmin(false);
             return;
         }
-        fetch('http://localhost:5000/api/users/me', {
+        fetch(`${API_URL}/api/users/me`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(res => res.json())

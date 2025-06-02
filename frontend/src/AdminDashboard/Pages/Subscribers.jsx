@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import './Styles/Subscribers.css';
 
 function Subscribers() {
@@ -13,7 +14,7 @@ function Subscribers() {
         const fetchSubscribers = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get("http://localhost:5000/api/subscribers");
+                const response = await axios.get(`${API_URL}/api/subscribers`);
                 setSubscribers(response.data);
                 setFilteredSubscribers(response.data);
                 setError('');

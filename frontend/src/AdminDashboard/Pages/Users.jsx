@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import EditUserForm from './EditUserForm';
 import './Styles/Users.css';
 
@@ -16,7 +17,7 @@ function Users() {
             const token = localStorage.getItem('token');
             try {
                 setLoading(true);
-                const url = new URL('http://localhost:5000/api/users');
+                const url = new URL(`${API_URL}/api/users`);
                 if (searchTerm) {
                     url.searchParams.append('search', searchTerm);
                 }
@@ -80,7 +81,7 @@ function Users() {
     const confirmDelete = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch(`http://localhost:5000/api/users/${selectedUser._id}`, {
+            const response = await fetch(`${API_URL}/api/users/${selectedUser._id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`,

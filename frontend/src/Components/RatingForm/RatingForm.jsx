@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import StarRating from '../StarRating/StarRating';
 import './RatingForm.css';
 
@@ -15,7 +16,7 @@ const RatingForm = ({ productId, onRatingSubmitted }) => {
     
     setSubmitting(true);
     try {
-      const response = await fetch('http://localhost:5000/api/ratings', {
+      const response = await fetch(`${API_URL}/api/ratings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import './Styles/Dashboard.css';
 
 function Dashboard() {
@@ -16,13 +17,13 @@ function Dashboard() {
         const fetchDashboardData = async () => {
             try {
                 // Fetch orders for sales and pending orders
-                const ordersRes = await fetch('http://localhost:5000/api/orders', {
+                const ordersRes = await fetch(`${API_URL}/api/orders`, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
                 });
                 const orders = await ordersRes.json();
 
                 // Fetch users count
-                const usersRes = await fetch('http://localhost:5000/api/users', {
+                const usersRes = await fetch(`${API_URL}/api/users`, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
                 });
                 const users = await usersRes.json();

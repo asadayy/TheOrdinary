@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './Styles/SendMail.css';
@@ -20,7 +21,7 @@ function SendMail() {
         setPreviewUrl('');
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5000/api/subscribers/send-mail', {
+            const res = await fetch(`${API_URL}/api/subscribers/send-mail`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

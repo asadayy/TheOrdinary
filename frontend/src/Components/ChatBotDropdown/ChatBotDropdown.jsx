@@ -1,6 +1,7 @@
 import { ImageIcon, SendHorizonal } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import "./ChatBotDropdown.css";
+import { API_URL } from '../../config/api.js';
 
 const ChatBotDropdown = () => {
     const [messages, setMessages] = useState([
@@ -23,7 +24,7 @@ const ChatBotDropdown = () => {
 
         try {
             // Send message to backend chatbot endpoint
-            const response = await fetch('http://localhost:5000/api/chat/message', {
+            const response = await fetch(`${API_URL}/api/chat/message`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,5 +1,5 @@
 import axios from "axios";
-import API_URL from "../config/api.js";
+import { API_URL } from "../config/api.js";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "swiper/css";
@@ -51,7 +51,7 @@ const Home = () => {
       
       // Try direct backend access for product images
       // This should work for all product images regardless of path format
-      const backendUrl = `http://localhost:5000/static/${imageUrl}`;
+      const backendUrl = `${API_URL}/static/${imageUrl}`;
       console.log('Using backend URL:', backendUrl);
       return backendUrl;
     } catch (error) {

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import "./Footer.css";
 import axios from "axios";
 import instagram from "../Assets/instagram.png";
@@ -26,7 +27,7 @@ const Footer = () => {
         }
 
         try {
-            await axios.post("http://localhost:5000/api/subscribers", { email });
+            await axios.post(`${API_URL}/api/subscribers`, { email });
             setSubscribeMsg("Subscribed successfully!");
             setEmail("");
         } catch (error) {

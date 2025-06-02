@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from 'react';
+import { API_URL } from '../config/api';
 import { Link } from "react-router-dom";
 import "./Styles/ProductDetailModal.css";
 
@@ -18,7 +19,7 @@ const getImageUrl = (imageUrl) => {
     }
     
     // Use backend static route for consistent image handling
-    return `http://localhost:5000/static/${imageUrl}`;
+    return `${API_URL}/static/${imageUrl}`;
   } catch (error) {
     console.error('Error processing image URL:', error);
     return IMAGE_NOT_FOUND_URL;

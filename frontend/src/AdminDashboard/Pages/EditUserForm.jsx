@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import './Styles/EditUserForm.css'; // Create if needed
 
 function EditUserForm({ user, onClose, onUpdate }) {
@@ -23,7 +24,7 @@ function EditUserForm({ user, onClose, onUpdate }) {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch(`http://localhost:5000/api/users/${user._id}`, {
+            const response = await fetch(`${API_URL}/api/users/${user._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

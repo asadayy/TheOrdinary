@@ -37,8 +37,8 @@ const Products = () => {
                 return imageUrl;
             }
             
-            // Construct the full URL using the backend static route
-            const fullUrl = `http://localhost:5000/static/${imageUrl}`;
+            // Construct the full URL using the backend static route from the config
+            const fullUrl = `${API_URL}/static/${imageUrl}`;
             
             // Log the URL for debugging
             console.log('Image URL Debug:', {

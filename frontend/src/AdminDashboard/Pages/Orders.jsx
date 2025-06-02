@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../config/api.js';
 import './Styles/Orders.css';
 
 const Orders = () => {
@@ -33,7 +34,7 @@ const Orders = () => {
                 return;
             }
 
-            const response = await axios.get('http://localhost:5000/api/orders', {
+            const response = await axios.get(`${API_URL}/api/orders`, {
                 headers: { Authorization: `Bearer ${token}` },
                 withCredentials: true
             });
@@ -62,7 +63,7 @@ const Orders = () => {
             }
 
             await axios.put(
-                `http://localhost:5000/api/orders/${orderId}/status`,
+                `${API_URL}/api/orders/${orderId}/status`,
                 { status: newStatus },
                 {
                     headers: { Authorization: `Bearer ${token}` },

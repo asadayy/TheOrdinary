@@ -204,7 +204,7 @@ function Products() {
                                 <div className="product-details-view">
                                     <h3>Product Details</h3>
                                     <img
-                                        src={`http://localhost:5000/static/${selectedProduct.image_url}`}
+                                        src={`${API_URL}/static/${selectedProduct.image_url}`}
                                         alt={selectedProduct.name}
                                         className="product-image"
                                     />
