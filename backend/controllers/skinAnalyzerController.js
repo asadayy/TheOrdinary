@@ -1,16 +1,16 @@
 const asyncHandler = require('express-async-handler');
-const path = require('path');
-const fs = require('fs');
 const { analyzeSkinWithGemini, parseAnalysisResponse } = require('../services/geminiService');
+const Product = require('../models/Product');
 
-// Get product data
-const getProductData = () => {
+// Get product data from MongoDB instead of file system
+const getProductData = async () => {
   try {
-    const productPath = path.join(__dirname, '..', '..', 'frontend', 'products.json');
-    const rawData = fs.readFileSync(productPath);
-    return JSON.parse(rawData);
+    // Fetch all products from the database
+    const products = await Product.find({}).lean();
+    console.log(`Fetched ${products.length} products from database`);
+    return products;
   } catch (error) {
-    console.error('Error reading product data:', error);
+    console.error('Error fetching product data from database:', error);
     return [];
   }
 };
@@ -24,8 +24,8 @@ const analyzeSkin = asyncHandler(async (req, res) => {
   }
 
   try {
-    // Get product data
-    const products = getProductData();
+    // Get product data from database (await since it's now async)
+    const products = await getProductData();
     
     if (!products || products.length === 0) {
       console.error('No product data available');
