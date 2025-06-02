@@ -146,14 +146,7 @@ const createProduct = asyncHandler(async (req, res) => {
                   ", "
                 )}</p>
                 <div style="margin: 20px 0;">
-                  <a href="http://localhost:3000/products/${
-                    product.category
-                  }/${product.name
-            .toLowerCase()
-            .replace(
-              /\s+/g,
-              "-"
-            )}" style="background-color: #1a5d44; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                  <a href="https://the-ordinary-hqjz.vercel.app/products/${product.category}/${product.name.toLowerCase().replace(/\s+/g, "-")}" style="background-color: #1a5d44; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
                     View Product
                   </a>
                 </div>
