@@ -32,7 +32,12 @@ const connectToDatabase = async () => {
     return db;
   } catch (error) {
     console.error('MongoDB connection error:', error);
-    process.exit(1);
+    // Don't exit the process in production, as this will crash the serverless function
+    if (process.env.NODE_ENV !== 'production') {
+      console.error('Failed to connect to MongoDB. Check your connection string.');
+    }
+    // Return error but don't crash
+    return { error };
   }
 };
 
