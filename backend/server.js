@@ -1,9 +1,15 @@
-// backend/server.js - Restructured for Vercel serverless deployment
+// backend/server.js - Optimized for Vercel serverless deployment
 require("./setup");
 require("dotenv").config();
+
+// Core dependencies
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
+const mongoose = require("mongoose");
+const { errorHandler } = require("./middleware/errorMiddleware");
+
+// Route imports
 const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -13,74 +19,68 @@ const orderRoutes = require("./routes/orderRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const ratingRoutes = require("./routes/ratingRoutes");
 const skinAnalyzerRoutes = require("./routes/skinAnalyzerRoutes");
-const { errorHandler } = require("./middleware/errorMiddleware");
-const mongoose = require("mongoose");
 
-// Connect to MongoDB (for both local development and Vercel)
+// MongoDB connection with caching for serverless environment
+const MONGODB_URI = process.env.MONGODB_URI;
+
+// Global variable to track connection status
+let cachedConnection = null;
 let isConnected = false;
 
 const connectToDatabase = async () => {
-  if (isConnected) {
+  if (cachedConnection) {
     console.log('Using existing MongoDB connection');
-    return;
+    return cachedConnection;
+  }
+  
+  if (!MONGODB_URI) {
+    console.error('MONGODB_URI not defined in environment variables');
+    throw new Error('MONGODB_URI is required');
   }
 
   try {
-    const db = await mongoose.connect(process.env.MONGODB_URI);
+    // Configure mongoose connection (important for Vercel)
+    mongoose.set('strictQuery', false);
+    
+    // Connect with retry logic
+    const options = {
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+      family: 4, // Use IPv4, skip trying IPv6
+    };
+    
+    const db = await mongoose.connect(MONGODB_URI, options);
+    cachedConnection = db;
     isConnected = true;
-    console.log('MongoDB connected ✅');
+    console.log('MongoDB connected successfully ✅');
     return db;
   } catch (error) {
     console.error('MongoDB connection error:', error);
-    // Don't exit the process in production, as this will crash the serverless function
-    if (process.env.NODE_ENV !== 'production') {
-      console.error('Failed to connect to MongoDB. Check your connection string.');
-    }
-    // Return error but don't crash
-    return { error };
+    throw error; // Let the middleware handle this error
   }
 };
 
 // Initialize express app
 const app = express();
 
-// Enhanced CORS Configuration
+// Simple CORS setup - allow all origins in production
 app.use(
   cors({
-    origin: function(origin, callback) {
-      const allowedOrigins = [
-        "http://localhost:3000",
-        "https://the-ordinary-hqjz.vercel.app",
-        // Add Vercel preview URLs if needed
-        /https:\/\/the-ordinary.*\.vercel\.app/
-      ];
-      
-      // Allow requests with no origin (like mobile apps, curl requests)
-      if (!origin) return callback(null, true);
-      
-      // Check if the origin is allowed
-      const allowed = allowedOrigins.some(allowedOrigin => {
-        if (allowedOrigin instanceof RegExp) {
-          return allowedOrigin.test(origin);
-        }
-        return allowedOrigin === origin;
-      });
-      
-      if (allowed) {
-        return callback(null, true);
-      } else {
-        console.log('CORS blocked request from:', origin);
-        return callback(null, false);
-      }
-    },
+    origin: '*', // Allow all origins in production for troubleshooting
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   })
 );
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Simple health check route for Vercel - helps with troubleshooting
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', environment: process.env.NODE_ENV, timestamp: new Date().toISOString() });
+});
+
+// JSON body parser with increased limit for uploads
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // ───── Session Middleware ──────────────────────────────────────────
 app.use(
@@ -109,39 +109,54 @@ app.use(errorHandler);
 // For local development only, not used in Vercel
 const PORT = process.env.PORT || 5000;
 
-// Connect to database and start server
-connectToDatabase()
-  .then(() => {
-    // Only start listening on a port in local development
-    if (process.env.NODE_ENV !== 'production') {
-      app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-    }
-  })
-  .catch(err => {
-    console.error('Failed to start server:', err);
-  });
-
-// This middleware ensures database is connected before handling any request
-const dbMiddleware = async (req, res, next) => {
+// Database connection middleware for ALL requests
+const dbConnectMiddleware = async (req, res, next) => {
   try {
     await connectToDatabase();
     next();
   } catch (error) {
-    console.error('Database connection error:', error);
-    return res.status(500).json({ message: 'Database connection failed', error: error.message });
+    console.error('Database connection failed:', error.message);
+    return res.status(500).json({ 
+      error: 'Database connection failed', 
+      message: error.message 
+    });
   }
 };
 
-// Apply database middleware to all routes
-app.use(dbMiddleware);
+// Apply database middleware BEFORE route handlers
+app.use(dbConnectMiddleware);
 
-// The serverless function handler for Vercel
-const handler = async (req, res) => {
-  // Return the Express app directly
+// Start server in development mode
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+// Special route to debug database connection in production
+app.get('/api/debug', async (req, res) => {
+  try {
+    const connectionStatus = mongoose.connection.readyState;
+    // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
+    const statusText = ['disconnected', 'connected', 'connecting', 'disconnecting'][connectionStatus];
+    
+    return res.status(200).json({
+      status: 'ok',
+      database: statusText,
+      environment: process.env.NODE_ENV,
+      serverTime: new Date().toISOString()
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
+
+// Vercel serverless handler
+module.exports = app;
+
+// Also export a specific handler function for Vercel
+module.exports.handler = async (req, res) => {
+  // This wrapper ensures proper handling in the serverless environment
   return app(req, res);
 };
-
-// Export the handler for Vercel AND the app for local development
-module.exports = app;
-// Also export handler specifically for Vercel
-module.exports.handler = handler;

@@ -5,15 +5,12 @@
  * It automatically switches between local development and production URLs
  */
 
-// Determine if we're in production based on hostname or environment
-const isProduction = 
-  window.location.hostname !== 'localhost' || 
-  process.env.NODE_ENV === 'production';
+// Force production API URL for now to fix connection issues
+// This bypasses environment detection to use the deployed backend
+const API_URL = 'https://the-ordinary-ifxd.vercel.app';
 
-// API base URL - automatically switches between environments
-const API_URL = isProduction
-  ? 'https://the-ordinary-ifxd.vercel.app' // Deployed backend URL  
-  : 'http://localhost:5000'; // Local development URL
+// Log the API URL being used to help with debugging
+console.log('Using API URL:', API_URL);
 
 // Export API URL for use throughout the app
 export default API_URL;
