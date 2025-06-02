@@ -44,15 +44,38 @@ const connectToDatabase = async () => {
 // Initialize express app
 const app = express();
 
-// Allow React devserver (http://localhost:3000) to send cookies
+// Enhanced CORS Configuration
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://the-ordinary-hqjz.vercel.app", // Frontend Vercel URL
-      process.env.FRONTEND_URL || "*"
-    ],
+    origin: function(origin, callback) {
+      const allowedOrigins = [
+        "http://localhost:3000",
+        "https://the-ordinary-hqjz.vercel.app",
+        // Add Vercel preview URLs if needed
+        /https:\/\/the-ordinary.*\.vercel\.app/
+      ];
+      
+      // Allow requests with no origin (like mobile apps, curl requests)
+      if (!origin) return callback(null, true);
+      
+      // Check if the origin is allowed
+      const allowed = allowedOrigins.some(allowedOrigin => {
+        if (allowedOrigin instanceof RegExp) {
+          return allowedOrigin.test(origin);
+        }
+        return allowedOrigin === origin;
+      });
+      
+      if (allowed) {
+        return callback(null, true);
+      } else {
+        console.log('CORS blocked request from:', origin);
+        return callback(null, false);
+      }
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 
@@ -84,13 +107,19 @@ app.use("/api/skin-analyzer", skinAnalyzerRoutes);
 app.use(errorHandler);
 
 // For local development only, not used in Vercel
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 5000;
-  // Connect to database immediately in development mode
-  connectToDatabase().then(() => {
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 5000;
+
+// Connect to database and start server
+connectToDatabase()
+  .then(() => {
+    // Only start listening on a port in local development
+    if (process.env.NODE_ENV !== 'production') {
+      app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    }
+  })
+  .catch(err => {
+    console.error('Failed to start server:', err);
   });
-}
 
 // This middleware ensures database is connected before handling any request
 const dbMiddleware = async (req, res, next) => {
